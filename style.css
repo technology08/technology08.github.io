@@ -120,6 +120,40 @@ body {
     overflow-x: visible;
 }
 
+.detail-container {
+    overflow: hidden;
+    align-items: center;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+/* 
+.detail-invert {
+    margin-left: -4.9%;
+} */
+
+.detail-text {
+    position: relative;
+    width: 40.2vw;
+    padding-left: 4.9%;
+    float: left;
+    padding-top: 4.9%;
+}
+
+.detail-img {
+    position: relative;
+    width: 50vw;
+    overflow: hidden;
+}
+
+.detail-left {
+    float: left;
+}
+
+.detail-right .detail-img {
+    float: right;
+}
+
 /* PUBLICATIONS */
 .publication {
     margin: 10px 0;
