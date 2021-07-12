@@ -146,12 +146,32 @@ body {
     overflow: hidden;
 }
 
+.app-img {
+    position: absolute;
+    width: 50vw;
+    overflow: hidden;
+}
+
+.app-img-left {
+    float: left;
+    transform: translate(-50vw, 2vw);
+}
+
+.app-img-right {
+    float: right;
+    transform: translate(5vw, 2vw); 
+}
+
 .detail-left {
     float: left;
 }
 
 .detail-right .detail-img {
     float: right;
+}
+
+.detail-left .detail-img {
+    float: left;
 }
 
 /* PUBLICATIONS */
@@ -319,4 +339,8 @@ ul.tab-cards {
 
 .expanded-tabs a {
     text-decoration: none;
+}
+
+.appstore {
+    padding: 16px 0;
 }
