@@ -113,7 +113,7 @@ body {
 
 /* DETAIL VIEW */
 
-.detail {
+.publications {
     margin: 0 4.9% 0 4.9%;
     padding: 60px 0 0 0;
     position: relative;
@@ -135,9 +135,9 @@ body {
 .detail-text {
     position: relative;
     width: 40.2vw;
-    padding-left: 4.9%;
+    padding-left: 3%;
     float: left;
-    padding-top: 4.9%;
+    padding-top: 3%;
 }
 
 .detail-img {
@@ -154,12 +154,12 @@ body {
 
 .app-img-left {
     float: left;
-    transform: translate(-50vw, 2vw);
+    transform: translate(-50vw, 3.5vh);
 }
 
 .app-img-right {
     float: right;
-    transform: translate(5vw, 2vw); 
+    transform: translate(7vw, 3.5vh); 
 }
 
 .detail-left {
@@ -343,4 +343,69 @@ ul.tab-cards {
 
 .appstore {
     padding: 16px 0;
+}
+
+.connect-margin {
+    margin: 2% 10% 5% 10%;
+    padding: 3% 0 0 0;
+}
+
+/* FORM */
+
+input[type=text] {
+    background-color: #2f2f2f;
+    height: 40px;
+    font-size: 20px;
+    padding: 20px 5px 1px 1px;
+    width: 100%;
+    transition: border 0.4s ease-in-out;
+    border-color: transparent;
+    border-radius: 0;
+}
+/* 
+input[type=text]::after {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    transition: 1s ease;
+    -webkit-animation: 1s ease;
+    border: 3px solid var(--theme-blue)
+} */
+
+input[type=text]:focus {
+    outline: none;
+    border-bottom-color: var(--theme-blue);
+}
+
+/* input[type=text]:focus::after {
+    width: 100%;
+} */
+
+textarea {
+    background-color: #2f2f2f;
+    height: 100px;
+    font-size: 20px;
+    padding: 20px auto 1px auto;
+    width: 100%;
+    transition: border 0.4s ease-in-out;
+    border-color: transparent;
+    border-radius: 0;
+    resize: vertical;
+}
+
+
+textarea:focus {
+    outline: none;
+    border-bottom-color: var(--theme-blue);
+}
+
+input[type=submit] {
+    background-color: var(--theme-blue);
+    height: 40px;
+    font-size: 20px;
+    width: 10%;
+    transition: border 0.4s ease-in-out;
+    border-color: transparent;
+    border-radius: 0;
 }
