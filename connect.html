@@ -37,15 +37,16 @@
             <h2>Let's Talk!</h2>
             <p>Whether you would like to collaborate on a project or talk about the meaning of life, the universe, and everything, please feel free to reach out! I will try to respond to all messages I get within a week.</p>
             <br><br>
-            <form action="">
+            <form id="connect-form">
                 <label for="fname">First Name</label><br>
-                <input type="text" id="fname" name="fname" class="text-field"> <br> <br>
+                <input type="text" id="fname" name="fname" class="text-field" required> <br> <br>
                 <label for="lname">Last Name</label> <br>
-                <input type="text" id="lname" name="lname" class="text-field"> <br> <br>
+                <input type="text" id="lname" name="lname" class="text-field" required> <br> <br>
                 <label for="email">Email</label> <br>
-                <input type="text" id="email" name="email" class="text-field"> <br> <br>
+                <input type="email" id="email" name="email" class="text-field" required> <br>
+                <label for="email" class="validation">Please input a valid email.</label> <br>
                 <label for="message">Message</label> <br>
-                <textarea name="message" id="message" cols="30" rows="10"></textarea> <br> <br>
+                <textarea name="message" id="message" cols="30" rows="10" required></textarea> <br> <br>
                 <input type="submit" value="Submit">
             </form>
         </section>
@@ -71,6 +72,10 @@
         </div>
         <p class="copyright">Copyright Connor Espenshade 2021. All rights reserved.</p>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="script.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script> -->
     <!-- <script src="contact.js"></script> -->
 </body>

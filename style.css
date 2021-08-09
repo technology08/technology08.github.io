@@ -115,7 +115,7 @@ body {
 
 .publications {
     margin: 0 4.9% 0 4.9%;
-    padding: 60px 0 0 0;
+    padding: 60px 0;
     position: relative;
     overflow-x: visible;
 }
@@ -140,6 +140,12 @@ body {
     padding-top: 3%;
 }
 
+.detail-img-container {
+    position: relative;
+    float: right; 
+    width: 50vw;
+}
+
 .detail-img {
     position: relative;
     width: 50vw;
@@ -158,12 +164,15 @@ body {
 }
 
 .app-img-right {
+    display: inline-block;
+    height: 80%;    
+    width: auto;
+    transform: translate(18vw, 3vw);
     float: right;
-    transform: translate(7vw, 3.5vh); 
-}
-
-.detail-left {
-    float: left;
+    /* transform: translate(50%, 0%);  */
+    /* right: 12.5%; */
+    /* height: 50vh;
+    width: auto; */
 }
 
 .detail-right .detail-img {
@@ -174,10 +183,72 @@ body {
     float: left;
 }
 
+.detail-left {
+    float: left;
+}
+
+/* Mobile CSS Exceptions */
+
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 30px;
+    }
+    
+    .detail-container {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .detail-text {
+        width: auto;
+        padding: 16px;
+        float: none;
+    }
+    
+    .detail-img-container {
+        float: none; 
+        width: 100vw;
+    }
+    
+    .detail-img {
+        width: 100vw;
+    }
+    
+    .app-img {
+        width: 100vw;
+    }
+    
+    .app-img-left {
+        float: none;
+        transform: translate(0, 0);
+    }
+    
+    .app-img-right {
+        display: inline-block;
+        height: 80%;    
+        width: auto;
+        transform: translate(0, 0);
+
+        float: none;
+    }
+    
+    .detail-right .detail-img {
+        float: none;
+    }
+    
+    .detail-left .detail-img {
+        float: none;
+    }
+    
+    .detail-left {
+        float: none;
+    }
+}
+
 /* PUBLICATIONS */
 .publication {
     margin: 10px 0;
-    border: 2px solid red;
     width: 100%;
 }
 
@@ -199,7 +270,6 @@ h3.year {
 .pubcontent {
     margin: 0 0 0 15%;
     left: 15%;
-    border: 2px solid green;
 }
 
 h2.pubtitle {
@@ -362,25 +432,39 @@ input[type=text] {
     border-color: transparent;
     border-radius: 0;
 }
-/* 
-input[type=text]::after {
-    content: "";
-    display: block;
-    width: 0;
-    position: absolute;
-    transition: 1s ease;
-    -webkit-animation: 1s ease;
-    border: 3px solid var(--theme-blue)
-} */
 
 input[type=text]:focus {
     outline: none;
     border-bottom-color: var(--theme-blue);
 }
 
-/* input[type=text]:focus::after {
+input[type=email] {
+    background-color: #2f2f2f;
+    height: 40px;
+    font-size: 20px;
+    padding: 20px 5px 1px 1px;
     width: 100%;
-} */
+    transition: border 0.4s ease-in-out;
+    border-color: transparent;
+    border-radius: 0;
+}
+
+input[type=email]:focus {
+    outline: none;
+    border-bottom-color: var(--theme-blue);
+}
+
+/* input[type=email]:invalid {
+    outline: none;
+    border-bottom-color: red;
+}*/
+
+.validation {
+    color: red;
+    font-size: 12px;
+    opacity: 0%;
+    display: hidden;
+} 
 
 textarea {
     background-color: #2f2f2f;
@@ -409,3 +493,4 @@ input[type=submit] {
     border-color: transparent;
     border-radius: 0;
 }
+
