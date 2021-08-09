@@ -152,29 +152,6 @@ body {
     overflow: hidden;
 }
 
-.app-img {
-    position: absolute;
-    width: 50vw;
-    overflow: hidden;
-}
-
-.app-img-left {
-    float: left;
-    transform: translate(-50vw, 3.5vh);
-}
-
-.app-img-right {
-    display: inline-block;
-    height: 80%;    
-    width: auto;
-    transform: translate(18vw, 3vw);
-    float: right;
-    /* transform: translate(50%, 0%);  */
-    /* right: 12.5%; */
-    /* height: 50vh;
-    width: auto; */
-}
-
 .detail-right .detail-img {
     float: right;
 }
@@ -213,24 +190,6 @@ body {
     
     .detail-img {
         width: 100vw;
-    }
-    
-    .app-img {
-        width: 100vw;
-    }
-    
-    .app-img-left {
-        float: none;
-        transform: translate(0, 0);
-    }
-    
-    .app-img-right {
-        display: inline-block;
-        height: 80%;    
-        width: auto;
-        transform: translate(0, 0);
-
-        float: none;
     }
     
     .detail-right .detail-img {
