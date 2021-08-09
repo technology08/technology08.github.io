@@ -98,6 +98,78 @@ body {
     max-width: 100%;
 }
 
+@media only screen and (min-width: 769px) {
+    .mobile-only {
+        display: none;  
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+
+    .main-wrapper {
+        height: auto;
+        width: 100vw;
+        padding: 16px;
+        position: relative;
+        box-sizing: border-box;
+    }
+    
+    .main-left, .main-right {
+        width: auto;
+        height: auto;
+    }
+    
+    .main-left {
+        float: none;
+        position: relative;
+        width: auto;
+    }
+    
+    .main-left-text {
+        margin: 0;
+        position: relative;
+        top: 0%;
+        left: 0%;
+        -ms-transform: translate(0%,0%);
+        transform: translate(0%,0%);
+        font-size: 30px;
+        width: auto;
+    }
+    
+    .main-right {
+        float: none;
+        justify-content: right;
+    }
+    
+    .main-right-content {
+        padding: 0;
+        position: relative;
+        width: auto;
+    }
+    
+    .main-right-text {
+        margin: 0;
+        position: relative;
+        top: 0%;
+        left: 0%;
+        font-size: 16px;
+        -ms-transform: translateY(0%);
+        transform: translateY(0%);
+        width: auto;
+    }
+    
+    .vl {
+        display: none;
+    }
+}
+
 /* VERTICAL LINE */
 
 .vl {
@@ -254,6 +326,29 @@ p.pubdescription {
 
 }
 
+@media only screen and (max-width: 768px) {
+    h2.pubtitle {
+        font-size: 30px;
+        margin-left: 110px;
+    }
+
+    h3.year {
+        font-size: 30px;
+        width: 90px;
+        height: 90px;
+    }
+
+    .pubcontent {
+        left: 0px;
+        margin-left: 0px;
+    }
+
+    .pubdoibtn {
+        width: 100%;
+        content: "PDF"
+    }
+}
+
 /* Tech Hero */
 
 .hero-div {
@@ -297,18 +392,6 @@ p.pubdescription {
 #parallax-technology {
     background-image: url("./images/tech-hero-2.jpeg");
 }
-/* 
-.blur-technology {
-    background-image: url("./images/tech-hero-2.jpeg");
-
-    -webkit-filter: blur(10px);
-  	-moz-filter: blur(10px);
-  	-o-filter: blur(10px);
-  	-ms-filter: blur(10px);
-  	filter: blur(10px);
-
-    opacity: 0;
-} */
 
 #parallax-research {
     background-image: url("./images/research-hero-2.png");
@@ -316,19 +399,7 @@ p.pubdescription {
 
 #parallax-research-2 {
     background-image: url("./images/research-hero-1.jpeg");
-    /* margin-left: -10%;
-    width: 120%; */
 }
-
-/* 
-.main-parallax {
-    border: 3px solid red;
-    width: 80%;
-    background-color: rgba(0, 0, 0, 0.5);
-    float: left;
-    transform: translate(10%, 100vh);
-    padding: 0.25% 0;
-} */
 
 /* Expanded Tabs */
 
@@ -422,7 +493,7 @@ input[type=email]:focus {
     color: red;
     font-size: 12px;
     opacity: 0%;
-    display: hidden;
+    display: none;
 } 
 
 textarea {
