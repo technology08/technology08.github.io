@@ -402,6 +402,35 @@ p.pubdescription {
     background-image: url("./images/research-hero-1.jpeg");
 }
 
+@media only screen and (max-width: 768px) { 
+    .parallax::before {
+        content: "";
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -10;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    #parallax-technology::before {
+        background: url("./images/tech-hero-2.jpeg") no-repeat center center;
+    }
+    
+    #parallax-research::before {
+        background: url("./images/research-hero-2.png") no-repeat center center;
+    }
+    
+    #parallax-research-2 {
+        background: url("./images/research-hero-1.jpeg") no-repeat center center;
+    }
+}
+
 /* Expanded Tabs */
 
 .expanded-tabs {
