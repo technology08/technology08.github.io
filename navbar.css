@@ -127,11 +127,86 @@ ul.footer-list {
     padding: 150px 0 0 0;
 }
 
+/* Mobile Menu Bar */
+
+.mobile-menu-btn {
+    display: none;
+    padding: 0;
+    float: right;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    -ms-transform: translate(-5%,-50%);
+    transform: translate(-5%,-50%);
+}
+
+.overlay { 
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: var(--theme-blue);
+    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow-y: hidden; 
+    transition: 0.5s;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-content {
+    width: 100%;
+    text-align: center;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #FFF;
+    display: block;
+    transition: 0.3s;
+}
+
+.closebtn {
+    float: right;
+    font-size: 36px;
+    align-self: right;
+    justify-self: center;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.mobile-page-list {
+    justify-content: center;
+}
+
+.mobile-link {
+    text-decoration: none;
+}
+
 /* Mobile Changes */
 
 @media only screen and (max-width: 768px) {
-    
+    .navlist {
+        display: none;
+    }
 
+    .connect-btn {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        justify-self: right;
+    }
+
+    .home-text {
+        left: 0%;
+    }
 
     /* Footer */
     footer {

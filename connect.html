@@ -22,11 +22,19 @@
             <ul class="navlist">
                 <li class="navitem"><a href="./research.html">Research</a></li>
                 <li class="navitem"><a href="./technology.html">Technology</a></li>
-                <li class="navitem"><a href="./community.html">Community</a></li>
-                <li class="navitem"><a href="./random.html">Random</a></li>
             </ul>
         </div>  
+        <a href="javascript:void(0);" class='mobile-menu-btn' onclick="openNav()"><img src="images/menu.svg" alt="" class='mobile-menu-btn'></a>   
     </nav>
+    <div class="overlay" id="nav-overlay">
+        <div class="overlay-content">
+            <a href="./index.html">Home</a>
+            <a href="./research.html">Research</a>  
+            <a href="./technology.html">Technology</a>      
+            <a href="./connect.html">Connect</a>    
+        </div>                 
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    </div>
     <!-- CHANGE IMAGE CLASS ID -->
     <div class="parallax parallax-technology" id="parallax-technology">
         <h1 class="parallax-header">Connect</h1>
@@ -57,10 +65,10 @@
             <div class="footercol">
                 <h6>Links</h6>
                 <ul class="footer-list">
+                    <li class="footer-link"><a href="./index.html">Home</a></li>
                     <li class="footer-link"><a href="./research.html">Research</a></li>
                     <li class="footer-link"><a href="./technology.html">Technology</a></li>
-                    <li class="footer-link"><a href="./community.html">Community</a></li>
-                    <li class="footer-link"><a href="./random.html">Random</a></li>
+                    <li class="footer-link"><a href="./connect.html">Connect</a></li>
                 </ul>
             </div> 
             <div class="footercol socials">
@@ -70,7 +78,7 @@
                 <a href="https://twitter.com/cjespenshade_" target="_blank"><img class="social twitter" src="./images/twitter.png" alt=""></a>
             </div>
         </div>
-        <p class="copyright">Copyright Connor Espenshade 2021. All rights reserved.</p>
+        <p class="copyright"><span class="copyright">&copy;</span> Connor Espenshade 2021. All rights reserved.</p>
     </footer>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>

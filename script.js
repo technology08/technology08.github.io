@@ -45,3 +45,14 @@ function updateConnectDatabase(fname, lname, email, message) {
 
     form.reset();
 }
+
+// Mobile Menu Bar
+function openNav() {
+    document.getElementById('nav-overlay').style.display = 'flex';
+    document.getElementById('nav-overlay').style.opacity = '100%';
+}
+
+function closeNav() {
+    document.getElementById('nav-overlay').style.opacity = '0%';
+    document.getElementById('nav-overlay').style.display = 'none';
+}
