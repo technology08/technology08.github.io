@@ -391,15 +391,15 @@ p.pubdescription {
 }
 
 #parallax-technology {
-    background-image: url("./images/tech-hero-2.jpeg");
+    background-image: url("./images/technology/tech-hero.jpeg");
 }
 
 #parallax-research {
-    background-image: url("./images/research-hero-2.png");
+    background-image: url("./images/research/research-hero-2.png");
 }
 
 #parallax-research-2 {
-    background-image: url("./images/research-hero-1.jpeg");
+    background-image: url("./images/research/research-hero-1.jpeg");
 }
 
 @supports (-webkit-touch-callout: none) {
