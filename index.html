@@ -14,7 +14,7 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <nav class="Nav">
+    <nav class="Nav transparent-nav">
         <p class="home-text"><a href="./index.html">Connor Espenshade</a></p>
         <div class="connect-btn">
             <p class="connect-text"><a href="./connect.html" id="connect">Connect</a></p>
@@ -24,7 +24,7 @@
                 <li class="navitem"><a href="./research.html">Research</a></li>
                 <li class="navitem"><a href="./technology.html">Technology</a></li>
             </ul>
-        </div> 
+        </div>  
         <a href="javascript:void(0);" class='mobile-menu-btn' onclick="openNav()"><img src="images/menu.svg" alt="" class='mobile-menu-btn'></a>   
     </nav>
     <div class="overlay" id="nav-overlay">
@@ -36,34 +36,44 @@
         </div>                 
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     </div>
-    <div class="main-wrapper main">
-        <div class="main-left main">
-            <div class="main-left-text">
-                <h1 class="main-heading">Science.</h1>
-                <h1 class="main-heading">Technology.</h1>
-                <h1 class="main-heading">Community.</h1>
-            </div>
-        </div>
-        <div class="main-right main">
-            <img src="./images/professional.jpeg" id="photo1" class="main-photo" alt="Resume photo of Connor Espenshade">
-        </div>
+    <div class="parallax" id="parallax-index">
+        <h1 class="parallax-header">Science.<br>Technology.<br>Community.</h1>
+        <img src="./images/index/professional.jpeg" id="photo1" class="main-photo" alt="Resume photo of Connor Espenshade">
     </div>
+    <!-- <div class="main-wrapper main">
+        <img src="./images/index/night.jpeg" id="photo1" class="main-photo" alt="Resume photo of Connor Espenshade">
+        <h1 class="main-heading">Science.<br>Technology.<br>Community.</h1>
+        <div class="main-right main">
+            <img src="./images/index/professional.jpeg" id="photo1" class="main-photo" alt="Resume photo of Connor Espenshade">
+        </div>
+    </div> -->
     <section class="publications">
     <!-- Brief Bio -->
     <section class="index-bio">
         <h2>Hello!</h2>
         <p>I am a rising senior from Cincinnati, OH at Stanford Online High School and Cincinnati Hills Christian Academy. I am deeply passionate about science, technology, medicine, and philosophy. In addition to being an Apple WWDC18 scholar, I have developed an app on the iOS App Store and have published a paper on Jupiter's synchrotron radiation in astrophysics. Further, I am the Education Co-Head at Innoverge International, where I develop new cutting-edge curriculum to expose and engage minority youth in interdisciplinary STEM workshops. In my free time, I enjoy pursuing neurological and philosophical research and conducting game nights with my friends. Moving forward, I am deeply excited to seek the convergence of biotechnology and philosophy, and help inspire others to follow their passions towards the pursuit of Truth as well.</p>
     </section>
-    <!-- Expanded Tabs -->
-    <section class="expanded-tabs">
-        <ul class="tab-cards">
-            <li class="tab-card"><a href="./research.html">Research</a></li>
-            <li class="tab-card"><a href="./technology.html">Technology</a></li>
-            <li class="tab-card"><a href="./community.html">Community</a></li>
-            <li class="tab-card"><a href="./random.html">Random</a></li>
-        </ul>
     </section>
-    </section>
+    <div class="index-container">
+        <div class="index-left">
+            <img class="detail-img" src="images/index/nano.jpeg" alt="">
+            <div class="index-detail-text" id="index-left-detail">
+                <h2>Research</h2>
+                <div class="hl" id="hl-index-left"></div>
+                <p>When I was just 7 years old, I recognized I wanted to spend my life in research & development because I knew that this field would always allow me to pursue the cutting edge of new technologies that hadn’t had the chance to collect dust. I wanted to not just build the next year’s work, but the next decade’s work. And throughout my journey, my thirst for research has only expanded.</p>
+                <a href="./research.html" class="index-btn" id="research">Explore<img class="index-icon" src="images/Arrow.svg"></a>
+            </div>
+        </div>
+        <div class="index-right">
+            <img class="detail-img" src="images/index/labs.jpg" alt="">           
+            <div class="index-detail-text" id="index-right-detail">
+                <h2>Technology</h2>
+                <div class="hl" id="hl-index-right"></div>
+                <p>When I was just 7 years old, I recognized I wanted to spend my life in research & development because I knew that this field would always allow me to pursue the cutting edge of new technologies that hadn’t had the chance to collect dust. I wanted to not just build the next year’s work, but the next decade’s work. And throughout my journey, my thirst for research has only expanded.</p>
+                <a href="./technology.html" class="index-btn" id="technology">Explore<img class="index-icon" src="images/Arrow.svg"></a>
+            </div>       
+        </div>
+    </div>
     <footer>
         <div class="hl"></div>
         <div class="columns">

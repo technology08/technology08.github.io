@@ -94,8 +94,14 @@ body {
 }
 
 .main-photo {
-    aspect-ratio: 1;
-    max-width: 100%;
+    height: 100vh;
+    float: right;
+    position: absolute;
+    right: 0%; 
+}
+
+.index-bio p {
+    font-size: 30px;
 }
 
 @media only screen and (min-width: 769px) {
@@ -199,10 +205,6 @@ body {
     margin: 0;
     padding: 0;
 }
-/* 
-.detail-invert {
-    margin-left: -4.9%;
-} */
 
 .detail-text {
     position: relative;
@@ -222,6 +224,7 @@ body {
     position: relative;
     width: 50vw;
     overflow: hidden;
+    object-fit: cover;
 }
 
 .detail-right .detail-img {
@@ -236,9 +239,82 @@ body {
     float: left;
 }
 
+.index-container {
+    overflow: hidden;
+    align-items: center;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+.index-left {
+    float: left;
+    width: 50vw;
+    display: grid;
+}
+
+.index-right {
+    float: right;
+    width: 50vw;
+    display: grid;
+}
+
+.index-detail-text {
+    width: 30vw;
+    margin-top: 7.5%;
+    z-index: 5;
+}
+
+#index-left-detail {
+    margin-left: 10vw;
+}
+
+#index-right-detail {
+    margin-left: auto;
+    margin-right: 11.5vw;
+}
+
+.detail-img, .index-detail-text {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#hl-index-left, #hl-index-right {
+    top: 0%;
+    margin-bottom: 20px;
+}
+
+.index-btn {
+    text-decoration: none;
+    border: 5px solid white;
+    width: 30vw; 
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding-left: 16px;
+    font-size: 30px;
+}
+
+.index-icon {
+    margin-left: 12px;
+}
+
+.index-detail-text h2 {
+    color: white;
+}
+
 /* Mobile CSS Exceptions */
 
 @media only screen and (max-width: 768px) {
+    .detail-img {
+        height: 100%;
+    }
+
+    .index-btn {
+        margin-bottom: 20px;
+    }
+
     h2 {
         font-size: 30px;
     }
@@ -274,6 +350,18 @@ body {
     
     .detail-left {
         float: none;
+    }
+
+    .index-left, .index-right {
+        width: 100vw;
+    }
+
+    .index-detail-text {
+        width: 80vw;
+    }
+
+    .index-btn {
+        width: 70vw;
     }
 }
 
@@ -388,6 +476,12 @@ p.pubdescription {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#parallax-index {
+    background-image: url("./images/index/night.jpeg");
+    justify-content: left;
+    padding-left: 10%;
 }
 
 #parallax-technology {
