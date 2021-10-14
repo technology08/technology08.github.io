@@ -35,6 +35,10 @@ body {
     background-color: black;
 } 
 
+.indent {
+    padding-left: 30px;
+}
+
 /* MAIN HEADER */
 
 .main-wrapper {
@@ -289,11 +293,31 @@ body {
     border: 5px solid white;
     width: 30vw; 
     height: 70px;
+    display: block;
+    margin-top: 20px;
+    font-size: 30px;
+
+    background: linear-gradient(to right, white 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .2s ease-out;
+}
+
+.index-btn:hover {
+    background-position: left bottom;
+}
+
+.index-btn-fill {
+    padding-left: 16px;
     display: flex;
     align-items: center;
-    margin-top: 20px;
-    padding-left: 16px;
-    font-size: 30px;
+    transition: all .2s ease-out;
+    height: 100%;
+}
+
+.index-btn-fill:hover {
+    /* color: black; */
+    filter: invert(100%) sepia(93%) saturate(0%) hue-rotate(87deg) brightness(119%) contrast(119%);
 }
 
 .index-icon {
@@ -479,7 +503,7 @@ p.pubdescription {
 }
 
 #parallax-index {
-    background-image: url("./images/index/night.jpeg");
+    background-image: url("./images/index/professional.jpg");
     justify-content: left;
     padding-left: 10%;
 }
@@ -511,34 +535,6 @@ p.pubdescription {
     align-items: center;
     border: 2px blue solid;
     /* width: 90.2vw; */
-}
-
-ul.tab-cards {
-    list-style-type: none;
-    float: left;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px red solid;
-}
-
-.tab-card {
-    background-color: #2f2f2f;
-    width: 18vw;
-    height: 300px;
-    float: left;
-    display: inline;
-    font-size: 1em;
-    border: 2px green solid;
-    margin: 0 2vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.expanded-tabs a {
-    text-decoration: none;
 }
 
 .appstore {
