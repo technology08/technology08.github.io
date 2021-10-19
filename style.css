@@ -40,6 +40,10 @@ body {
     padding-left: 30px;
 }
 
+.bullet-bottom-margin {
+    margin-bottom: 120px;
+}
+
 /* MAIN HEADER */
 
 .main-wrapper {
@@ -251,17 +255,22 @@ body {
     width: 100vw;
     margin: 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    column-gap: 0;
+    row-gap: 0;
+    grid-auto-rows: 1fr;
 }
 
 .index-left {
-    float: left;
-    width: 50vw;
+    width: 100%;
+    height: 100%;
     display: grid;
 }
 
 .index-right {
-    float: right;
-    width: 50vw;
+    width: 100%;
+    height: 100%;
     display: grid;
 }
 
@@ -279,6 +288,36 @@ body {
 #index-right-detail {
     margin-left: auto;
     margin-right: 11.5vw;
+}
+
+.next-page {
+    width: 100vw;
+}
+
+#np-tech {
+    background-image: url(./images/index/labs.jpg);
+    background-size: 100% auto;
+    background-position-y: -200px;
+}
+
+#np-research {
+    background-image: url(./images/index/nano.jpeg);
+    background-size: 100% auto;
+    background-position-y: -300px;
+}
+
+.next-page-img {
+    width:100%; 
+    height:100%; 
+    overflow: hidden;
+    object-fit: cover;
+    vertical-align: top;
+    
+}
+
+.next-page-wrapper {
+    width: 80vw;
+    padding: 5% 10%;
 }
 
 .detail-img, .index-detail-text {
@@ -301,12 +340,16 @@ body {
     margin-top: 20px;
     font-size: 30px;
     font-weight: 700;
-    bottom: 10%;
+    bottom: 0%;
 
     background: linear-gradient(to right, white 50%, transparent 50%);
     background-size: 200% 100%;
     background-position: right bottom;
     transition: all .2s ease-out;
+}
+
+.bottom-margin {
+    margin-bottom: 20px;
 }
 
 .index-btn:hover {
@@ -341,6 +384,10 @@ body {
 /* Mobile CSS Exceptions */
 
 @media only screen and (max-width: 768px) {
+    .index-container {
+        grid-template-columns: 100vw; 
+    }
+
     .detail-img {
         height: 100%;
     }
@@ -501,7 +548,7 @@ p.pubdescription {
     align-items: center;
 }
 
-.parallax-header {
+#ph-main {
     padding-left: 10%;
 }
 
@@ -520,6 +567,34 @@ p.pubdescription {
 
 #parallax-research-2 {
     background-image: url("./images/research/research-hero-1.jpeg");
+}
+
+#parallax-connect {
+    background-image: url("./images/connect.jpg");
+    background-position-y: 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    #parallax-index {
+        background-position-x: 0px;
+    }
+
+    #parallax-research {
+        background-position-x: 0px;
+    }
+
+    #parallax-connect {
+        background-position-x: -50px;
+    }
+/* 
+    #ph-main {
+        position: absolute;
+        bottom: 10%;
+    }
+
+    #cv {
+        display: none;
+    } */
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -616,9 +691,8 @@ input[type=submit] {
     background-color: var(--theme-blue);
     height: 40px;
     font-size: 20px;
-    width: 10%;
+    width: 100px;
     transition: border 0.4s ease-in-out;
     border-color: transparent;
     border-radius: 0;
 }
-
