@@ -89,7 +89,7 @@ h6 {
 .hl {
     border-top: 6px solid var(--theme-blue);
     width: 100%;
-    position: relative;
+    /* position: relative; */
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
