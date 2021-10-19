@@ -313,6 +313,10 @@ body {
     background-position: left bottom;
 }
 
+#website-dev {
+    bottom: 0%;
+}
+
 .index-btn-fill {
     padding-left: 16px;
     display: flex;
