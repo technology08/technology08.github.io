@@ -1,3 +1,5 @@
+// DEPRECATED
+
 var config = {
         apiKey: "AIzaSyBwapXkF7CDpuqZMKM5XtHuFZwhdAaYpMU",
         authDomain: "espenshade-personal-website.firebaseapp.com",
