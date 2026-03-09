@@ -34,7 +34,7 @@ p {
 
 body {
     background-color: black;
-} 
+}
 
 .indent {
     padding-left: 30px;
@@ -110,7 +110,7 @@ body {
     height: 100vh;
     float: right;
     position: absolute;
-    right: 0%; 
+    right: 0%;
 }
 
 .index-bio-text {
@@ -120,7 +120,7 @@ body {
 
 @media only screen and (min-width: 769px) {
     .mobile-only {
-        display: none;  
+        display: none;
     }
 }
 
@@ -140,18 +140,18 @@ body {
         position: relative;
         box-sizing: border-box;
     }
-    
+
     .main-left, .main-right {
         width: auto;
         height: auto;
     }
-    
+
     .main-left {
         float: none;
         position: relative;
         width: auto;
     }
-    
+
     .main-left-text {
         margin: 0;
         position: relative;
@@ -162,18 +162,18 @@ body {
         font-size: 30px;
         width: auto;
     }
-    
+
     .main-right {
         float: none;
         justify-content: right;
     }
-    
+
     .main-right-content {
         padding: 0;
         position: relative;
         width: auto;
     }
-    
+
     .main-right-text {
         margin: 0;
         position: relative;
@@ -184,7 +184,7 @@ body {
         transform: translateY(0%);
         width: auto;
     }
-    
+
     .vl {
         display: none;
     }
@@ -214,7 +214,7 @@ body {
 
 .grid-wrapper {
     display: grid;
-    grid-template-columns: 50vw 50vw; 
+    grid-template-columns: 50vw 50vw;
     column-gap: 0;
     row-gap: 0;
 }
@@ -256,7 +256,7 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: 1fr 1fr;
     column-gap: 0;
     row-gap: 0;
     grid-auto-rows: 1fr;
@@ -307,12 +307,12 @@ body {
 }
 
 .next-page-img {
-    width:100%; 
-    height:100%; 
+    width:100%;
+    height:100%;
     overflow: hidden;
     object-fit: cover;
     vertical-align: top;
-    
+
 }
 
 .next-page-wrapper {
@@ -334,7 +334,7 @@ body {
     position: absolute;
     text-decoration: none;
     border: 5px solid white;
-    width: 30vw; 
+    width: 30vw;
     height: 70px;
     display: block;
     margin-top: 20px;
@@ -385,7 +385,7 @@ body {
 
 @media only screen and (max-width: 768px) {
     .index-container {
-        grid-template-columns: 100vw; 
+        grid-template-columns: 100vw;
     }
 
     .detail-img {
@@ -402,11 +402,11 @@ body {
 
     .grid-wrapper {
         display: grid;
-        grid-template-columns: 100vw; 
+        grid-template-columns: 100vw;
         column-gap: 0;
         row-gap: 0;
     }
-    
+
     .detail-text {
         width: auto;
         padding: 16px;
@@ -455,7 +455,7 @@ h3.year {
     float: left;
 }
 
-/* Wrapper */ 
+/* Wrapper */
 
 .pubcontent {
     margin: 0 0 0 15%;
@@ -468,7 +468,7 @@ h2.pubtitle {
 }
 
 .pubdoibtn {
-    border: 4px solid white; 
+    border: 4px solid white;
     border-radius: 15px;
     padding: 5px 10px;
     text-decoration: none;
@@ -532,11 +532,11 @@ p.pubdescription {
 .parallax {
     /* The image used */
     /* Below per id */
-  
+
     /* Set a specific height */
-    min-height: 100vh; 
+    min-height: 100vh;
     width: 100%;
-  
+
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -553,12 +553,12 @@ p.pubdescription {
 }
 
 #parallax-index {
-    background-image: url("./images/index/professional.jpg");
+    background-image: url("./images/technology/tech-hero.png");
     justify-content: left;
 }
 
 #parallax-technology {
-    background-image: url("./images/technology/tech-hero.jpeg");
+    background-image: url("./images/technology/tech-hero.png");
 }
 
 #parallax-research {
@@ -586,7 +586,7 @@ p.pubdescription {
     #parallax-connect {
         background-position-x: -50px;
     }
-/* 
+/*
     #ph-main {
         position: absolute;
         bottom: 10%;
@@ -667,7 +667,7 @@ input[type=email]:focus {
     font-size: 12px;
     opacity: 0%;
     display: none;
-} 
+}
 
 textarea {
     background-color: #2f2f2f;
