@@ -530,22 +530,35 @@ p.pubdescription {
 }
 
 .parallax {
-    /* The image used */
-    /* Below per id */
-
-    /* Set a specific height */
+    position: relative;
+    overflow: hidden;
     min-height: 100vh;
     width: 100%;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.parallax::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: 0;
+    bottom: -10%;
+    left: 0;
+    background-image: var(--parallax-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate3d(0, var(--parallax-offset, 0px), 0);
+    will-change: transform;
+    z-index: 0;
+}
+
+.parallax-header {
+    position: relative;
+    z-index: 1;
 }
 
 #ph-main {
@@ -553,37 +566,36 @@ p.pubdescription {
 }
 
 #parallax-index {
-    background-image: url("./images/technology/tech-hero.png");
+    --parallax-image: url("./images/technology/tech-hero.png");
     justify-content: left;
 }
 
 #parallax-technology {
-    background-image: url("./images/technology/tech-hero.png");
+    --parallax-image: url("./images/technology/tech-hero.png");
 }
 
 #parallax-research {
-    background-image: url("./images/research/research-hero-2.png");
+    --parallax-image: url("./images/research/research-hero-2.png");
 }
 
 #parallax-research-2 {
-    background-image: url("./images/research/research-hero-1.jpeg");
+    --parallax-image: url("./images/research/research-hero-1.jpeg");
 }
 
 #parallax-connect {
-    background-image: url("./images/connect.jpg");
-    background-position-y: 0px;
+    --parallax-image: url("./images/connect.jpg");
 }
 
 @media only screen and (max-width: 768px) {
-    #parallax-index {
+    #parallax-index::before {
         background-position-x: 0px;
     }
 
-    #parallax-research {
+    #parallax-research::before {
         background-position-x: 0px;
     }
 
-    #parallax-connect {
+    #parallax-connect::before {
         background-position-x: -50px;
     }
 /*
@@ -599,7 +611,7 @@ p.pubdescription {
 
 @supports (-webkit-touch-callout: none) {
     .parallax {
-        background-attachment:initial;
+        --parallax-offset: 0px;
     }
 }
 

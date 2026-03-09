@@ -19,10 +19,7 @@ firebase.initializeApp(config);
 
 // Connect Database
 let database = firebase.database().ref('connect-form-infos');
-
-// Listen for form results
-var form = document.querySelector("#connect-form")
-form.addEventListener("submit", submitForm);
+let form = null;
 
 function submitForm(e) {
     e.preventDefault();
@@ -61,4 +58,56 @@ function openNav() {
 function closeNav() {
     document.getElementById('nav-overlay').style.opacity = '0%';
     document.getElementById('nav-overlay').style.display = 'none';
+}
+
+// Lightweight parallax transform (GPU-friendly) for hero sections.
+let parallaxEls = [];
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let parallaxTicking = false;
+
+function updateParallax() {
+    parallaxTicking = false;
+    if (!parallaxEls.length || reduceMotion.matches) {
+        return;
+    }
+
+    const viewportHeight = window.innerHeight;
+    parallaxEls.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.bottom <= 0 || rect.top >= viewportHeight) {
+            return;
+        }
+
+        const distanceFromCenter = rect.top + rect.height / 2 - viewportHeight / 2;
+        const offset = Math.round(distanceFromCenter * -0.12);
+        el.style.setProperty("--parallax-offset", `${offset}px`);
+    });
+}
+
+function requestParallaxUpdate() {
+    if (parallaxTicking) {
+        return;
+    }
+    parallaxTicking = true;
+    window.requestAnimationFrame(updateParallax);
+}
+
+function initPageEnhancements() {
+    form = document.querySelector("#connect-form");
+    if (form) {
+        form.addEventListener("submit", submitForm);
+    }
+
+    parallaxEls = document.querySelectorAll(".parallax");
+    if (parallaxEls.length && !reduceMotion.matches) {
+        window.addEventListener("scroll", requestParallaxUpdate, { passive: true });
+        window.addEventListener("resize", requestParallaxUpdate);
+        requestParallaxUpdate();
+    }
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPageEnhancements);
+} else {
+    initPageEnhancements();
 }
