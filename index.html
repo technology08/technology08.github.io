@@ -2,109 +2,273 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navbar.css">
     <title>Connor Espenshade</title>
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <meta name="description" content="Connor Espenshade — ML systems researcher working on inference efficiency: local-to-remote model routing, GPU partitioning and scheduling, and wafer-scale runtimes.">
+    <meta property="og:title" content="Connor Espenshade">
+    <meta property="og:description" content="ML systems researcher working on inference efficiency: model routing, GPU partitioning and scheduling, and wafer-scale runtimes.">
+    <meta property="og:url" content="https://connorespenshade.com">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%239a3b23'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' font-weight='bold' fill='%23fcfbf8' text-anchor='middle'%3ECE%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QENP1MN7NY"></script>
-    <script src="script.js"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-QENP1MN7NY');
+    </script>
 </head>
 <body>
-    <nav class="Nav transparent-nav">
-        <p class="home-text"><a href="./index.html">Connor Espenshade</a></p>
-        <div class="connect-btn">
-            <p class="connect-text"><a href="./connect.html" id="connect">Connect</a></p>
-        </div>
-        <div class="navlinks">
-            <ul class="navlist">
-                <li class="navitem"><a href="./research.html">Research</a></li>
-                <li class="navitem"><a href="./technology.html">Technology</a></li>
+    <header class="site-header">
+        <a class="wordmark" href="#top">Connor Espenshade</a>
+        <nav aria-label="Primary">
+            <a href="#publications">Publications</a>
+            <a href="#systems">Systems</a>
+            <a href="#archive">Archive</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="intro">
+            <h1>I build machine learning systems that waste less compute.</h1>
+            <p class="lede">
+                My research spans the inference and training stack: deciding when a small local model's
+                answer is good enough before paying for a frontier one, packing training workloads onto
+                partitioned GPUs, and simulating wafer-scale interconnects so runtime changes can be
+                validated in minutes instead of days.
+            </p>
+            <p>
+                I studied Computer Engineering at <a href="https://www.columbia.edu">Columbia University</a>
+                (B.S. 2026), where I published first-author work on GPU partitioning and fine-tuning efficiency
+                with <a href="https://www.cs.columbia.edu/~martha/">Prof. Martha Kim</a> and IBM Research.
+                At <a href="https://www.cerebras.ai">Cerebras Systems</a>, I designed and built a
+                simulator of the wafer-scale engine's interconnect from scratch &mdash; now part of how
+                runtime engineers there diagnose throughput stalls on large models.
+            </p>
+        </section>
+
+        <section id="news" aria-label="News">
+            <h2>News</h2>
+            <ul class="news">
+                <li><span class="date">2026</span><span>New preprint: <em>Escalator</em> &mdash; activation-probe verifiers for routing between local and remote models.</span></li>
+                <li><span class="date">2026</span><span>Graduated from Columbia University with a B.S. in Computer Engineering.</span></li>
+                <li><span class="date">2025</span><span><em>How Low Can LoRA Go</em> presented at MLArchSys, co-located with ISCA 2025.</span></li>
+                <li><span class="date">2025</span><span>Our paper on energy-efficient MIG scheduling appeared at IEEE CCGrid 2025.</span></li>
+                <li><span class="date">2025</span><span>Spent the summer at Cerebras Systems building a from-scratch simulator of the wafer-scale engine's interconnect.</span></li>
+                <li><span class="date">2024</span><span>First paper, on characterizing training energy on multi-instance GPUs, published at EuroMLSys 2024.</span></li>
             </ul>
-        </div>
-        <a href="javascript:void(0);" class='mobile-menu-btn' onclick="openNav()"><img src="images/menu.svg" alt="" class='mobile-menu-btn'></a>
-    </nav>
-    <div class="overlay" id="nav-overlay">
-        <div class="overlay-content">
-            <a href="./index.html">Home</a>
-            <a href="./research.html">Research</a>
-            <a href="./technology.html">Technology</a>
-            <a href="./connect.html">Connect</a>
-        </div>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    </div>
-    <div class="parallax" id="parallax-index">
-        <h1 class="parallax-header" id="ph-main">Scientist.<br>Researcher.<br>Developer.</h1>
-        <!-- <a style="margin-left: 10%; width: 120px; bottom:20%;" ref="" class="index-btn" id="cv"><div class="index-btn-fill">CV<img class="index-icon" src="images/popup.svg"></div></a> -->
-    </div>
-    <section class="publications">
-    <!-- Brief Bio -->
-    <section class="index-bio">
-        <h2>Hello!</h2>
-        <p class="index-bio-text">I am a senior Computer Engineering student at Columbia University in the City of New York from Cincinnati, OH. I am deeply passionate about the intersection of health, AI, and systems. Currently, I am a researcher on two teams within a new IBM-Columbia Collaboration for Sustainability in AI, where I'm working on evaluating hardware configurations and cooling solutions to minimize power consumption and maximize throughput. I have published 6 papers across various fields, including computer architecture and artificial intelligence, astrophysics, regenerative medicine. Moving forward, I am deeply excited to continue to solve the most exciting problems in engineering and society by collaborating together with passionate, driven people.</p>
-    </section>
-    </section>
-    <div class="index-container">
-        <div class="index-left">
-            <img class="detail-img" src="images/index/nano.jpeg" alt="">
-            <div class="index-detail-text" id="index-left-detail">
-                <h2>Research</h2>
-                <div class="hl" id="hl-index-left"></div>
-                <p class="index-detail-description">Ever since I was young, I wanted to always research the next big innovations. As of September 2021, I have published five papers, including,
-                    <ul class="indent bullet-bottom-margin">
-                        <li>Stem Cells & Nanotechnology for Reducing Senescence via Patient-Derived Artifical Organs</li>
-                        <li>Jupiter Synchrotron Radiation Modelling for NASA's JPL</li>
-                        <li>Possibility of an Additional Deductive Science</li>
-                    </ul>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+
+            <article class="pub">
+                <h3><a href="https://drive.google.com/file/d/1pALUp1SZFi79h8yHpGnU30opunU5-lEs/view?usp=sharing">Escalator: Low-Cost Activation Probes for Local-to-Remote Model Routing</a></h3>
+                <p class="authors"><strong>Connor Espenshade</strong>, Martha A. Kim</p>
+                <p class="venue">Preprint, 2026</p>
+                <p class="summary">
+                    Generate locally first, then decide. A lightweight probe over the local model's hidden
+                    activations scores each response (ROC-AUC 0.861 at detecting correctness) and escalates
+                    to a remote model only when the local answer looks insufficient, matching always-remote
+                    accuracy while escalating just 54% of queries.
                 </p>
-                <a href="./research.html" class="index-btn bottom-margin" id="research"><div class="index-btn-fill">Explore<img class="index-icon" src="images/Arrow.svg"></div></a>
-            </div>
-        </div>
-        <div class="index-right">
-            <img class="detail-img" src="images/index/labs.jpg" alt="">
-            <div class="index-detail-text" id="index-right-detail">
-                <h2>Technology</h2>
-                <div class="hl" id="hl-index-right"></div>
-                <p class="index-detail-description">Throughout my time in computer science, I have had a chance to use technology in various fields, including, <br>
-                    <ul class="indent bullet-bottom-margin">
-                        <li>Apple WWDC18 Scholarship</li>
-                        <li>Leaning Eagle App</li>
-                        <li>Augmented Reality Turn-by-Turn Directions</li>
-                        <li>Robotics iPhone Vision Algorithms & Networking</li>
-                        <li>Client and Personal Website Development</li>
-                    </ul>
+                <figure class="pub-figure">
+                    <svg viewBox="0 0 700 215" role="img" aria-label="Diagram of Escalator: a prompt is answered by a local model, an activation probe scores the answer, and only low-scoring answers are escalated to a remote model.">
+                        <!-- prompt -->
+                        <text class="fig-lbl" x="8" y="95">prompt</text>
+                        <path class="fig-line" d="M64 90 H88 M81 86 L88 90 L81 94"/>
+                        <!-- local model -->
+                        <rect class="fig-node" x="90" y="62" width="115" height="56" rx="4"/>
+                        <text class="fig-lbl fig-mid" x="147.5" y="95">local model</text>
+                        <path class="fig-line" d="M205 90 H238 M231 86 L238 90 L231 94"/>
+                        <!-- activation probe -->
+                        <rect class="fig-node fig-node-accent" x="240" y="62" width="145" height="56" rx="4"/>
+                        <text class="fig-lbl fig-mid" x="312.5" y="95">activation probe</text>
+                        <!-- branch point -->
+                        <path class="fig-line" d="M385 90 H418"/>
+                        <circle class="fig-dot" cx="420" cy="90" r="3"/>
+                        <!-- return path -->
+                        <path class="fig-line" d="M420 90 H608 M601 86 L608 90 L601 94"/>
+                        <text class="fig-cap fig-mid" x="517" y="78">return &middot; 46%</text>
+                        <text class="fig-lbl" x="616" y="95">answer</text>
+                        <!-- escalate path -->
+                        <path class="fig-line" d="M420 90 V165 H448 M441 161 L448 165 L441 169"/>
+                        <text class="fig-cap fig-accent" x="477" y="130">escalate &middot; 54%</text>
+                        <rect class="fig-node" x="450" y="137" width="135" height="56" rx="4"/>
+                        <text class="fig-lbl fig-mid" x="517.5" y="170">remote model</text>
+                        <path class="fig-line" d="M585 165 H608 M601 161 L608 165 L601 169"/>
+                        <text class="fig-lbl" x="616" y="170">answer</text>
+                    </svg>
+                    <figcaption>Fig. 1 &mdash; Every query is answered locally first; a lightweight probe over the
+                    local model's hidden activations decides whether that answer ships or the query pays for a
+                    frontier model.</figcaption>
+                </figure>
+                <p class="links">Draft PDF Available on Request</p>
+            </article>
+
+            <article class="pub">
+                <h3><a href="https://ieeexplore.ieee.org/document/11105809">Energy Efficient Scheduling of AI/ML Workloads on Multi-Instance GPUs with Dynamic Repartitioning</a></h3>
+                <p class="authors">E. Lipe, N. Karia, <strong>C. Espenshade</strong>, C. Stein, A. Tantawi, O. Tardieu</p>
+                <p class="venue">IEEE International Symposium on Cluster, Cloud and Internet Computing (CCGrid), 2025</p>
+                <p class="summary">
+                    Treats a single MIG-partitioned GPU as a multi-objective scheduling problem under real
+                    diurnal datacenter load, with reinforcement-learning-driven repartitioning &mdash; 68% better
+                    on a joint energy&ndash;tardiness objective than an unpartitioned GPU.
                 </p>
-                <a href="./technology.html" class="index-btn bottom-margin" id="technology"><div class="index-btn-fill">Explore<img class="index-icon" src="images/Arrow.svg"></div></a>
-            </div>
-        </div>
-    </div>
+                <p class="links"><a href="https://ieeexplore.ieee.org/document/11105809">IEEE Xplore</a> &middot; <a href="https://arxiv.org/abs/2606.25082">arXiv</a></p>
+            </article>
+
+            <article class="pub">
+                <h3><a href="https://openreview.net/forum?id=qNOmwe7pj8">How Low Can LoRA Go: System-Level Throughput, Energy, and Model Quality Tradeoffs when Fine-Tuning Adapters</a></h3>
+                <p class="authors"><strong>C. Espenshade</strong>, U. Deshpande, Y. Zhu, E. K. Lee, M. A. Kim</p>
+                <p class="venue">Machine Learning for Computer Architecture and Systems (MLArchSys, at ISCA), 2025</p>
+                <p class="summary">
+                    A profiling study of LoRA rank on Llama 3.1 8B across throughput, energy, and memory,
+                    showing up to 2.7&times; efficiency gains with negligible impact on perplexity.
+                </p>
+                <p class="links"><a href="https://openreview.net/forum?id=qNOmwe7pj8">OpenReview</a></p>
+            </article>
+
+            <article class="pub">
+                <h3><a href="https://doi.org/10.1145/3642970.3655830">Characterizing Training Performance and Energy for Foundation Models and Image Classifiers on Multi-Instance GPUs</a></h3>
+                <p class="authors"><strong>C. Espenshade</strong>, R. Peng, E. Hong, M. Calman, Y. Zhu, P. Parida, E. K. Lee, M. A. Kim</p>
+                <p class="venue">Workshop on Machine Learning and Systems (EuroMLSys, at EuroSys), 2024</p>
+                <p class="summary">
+                    Measured six workloads, from 14M-parameter classifiers to 1.5B-parameter language models,
+                    across MIG partition mixes: heterogeneous partitions deliver up to 33% lower energy and
+                    9% higher training throughput from a single GPU, and fine-tuning runs 55% faster at
+                    42% less energy.
+                </p>
+                <p class="links"><a href="https://doi.org/10.1145/3642970.3655830">DOI</a></p>
+            </article>
+
+            <p class="earlier">
+                Earlier work, before ML systems: regenerative medicine at Penn's
+                <a href="https://repository.upenn.edu/scn_protocols/71/">Singh Center for Nanotechnology</a> (2021),
+                and radio astronomy &mdash; <a href="https://doi.org/10.32374/atom.2020.1.3">modeling Jupiter's
+                synchrotron radiation</a> with NASA JPL collaborators (ATOM, 2020) plus two
+                <a href="http://www.socastrosci.org/images/2020_Proceedings_final.pdf">star-cluster studies</a> (SAS, 2020).
+            </p>
+        </section>
+
+        <section id="systems">
+            <h2>Systems</h2>
+            <p class="section-note">Selected engineering work, from silicon to kernel to runtime.</p>
+
+            <article class="project">
+                <h3>Wafer-scale interconnect simulator <span class="where">Cerebras Systems, 2025</span></h3>
+                <p>
+                    Before this existed, validating a runtime change meant a 24-hour run on wafer hardware.
+                    I designed and built a C++ simulator of the wafer's inter-die fabric from a blank file:
+                    every region, core, and wire, with backpressure from link capacities and delays, so
+                    simulated throughput and stalls track the real machine. Iteration dropped to 5 minutes
+                    (288x), and the simulator surfaced KV-cache token drops, batching inefficiencies,
+                    and race conditions on production-scale models. Hardware, systems, and ML teams adopted
+                    it, and engineers I onboarded kept extending it after my internship ended.
+                </p>
+            </article>
+
+            <article class="project">
+                <h3>Transformer accelerator on ESP <span class="where">Columbia, 2025</span></h3>
+                <p>
+                    Extended the HLS4ML compiler with custom C++ translators for matmul and transpose,
+                    implementing the hardware primitives transformer attention needs on FPGAs within the
+                    open-source ESP SoC platform.
+                    <a href="https://drive.google.com/file/d/18wk8qLOTG5fzq6lk48lEDnliFClCa_47/view?usp=sharing">Report</a>
+                </p>
+            </article>
+
+            <article class="project">
+                <h3>FPGA CNN accelerator <span class="where">Columbia, 2025</span></h3>
+                <p>
+                    Hardware/software co-design in SystemVerilog and C running an int8-quantized TensorFlow
+                    CNN (scales and zero-points handled in hardware), reaching a 3.4x convolution speedup
+                    at 30% device utilization.
+                    <a href="https://www.cs.columbia.edu/~sedwards/classes/2025/4840-spring/reports/MNIST-presentation.pdf">Presentation</a>
+                </p>
+            </article>
+
+            <article class="project">
+                <h3>Linux kernel scheduler &amp; filesystem <span class="where">Columbia, 2024</span></h3>
+                <p>
+                    A custom priority scheduler (+75% throughput on mixed workloads) and a complete
+                    read/write filesystem, both implemented in-kernel in C.
+                    <a href="https://gist.github.com/technology08/72c9d498f84410ef3715f24ff256f139">Notes</a>
+                </p>
+            </article>
+
+            <article class="project">
+                <h3>Robotic patch-clamp orchestration <span class="where">Columbia Bioelectronic Systems Lab, 2024</span></h3>
+                <p>
+                    Real-time control software coordinating ten lab devices, including manipulators, pumps, and
+                    cameras, to 1.0 &micro;m precision for automated patch-clamp electrophysiology.
+                    <a href="https://github.com/technology08/autopatchclamp">GitHub</a>
+                </p>
+            </article>
+        </section>
+
+        <section id="archive">
+            <h2>Archive</h2>
+            <p class="section-note">Where this started.</p>
+
+            <article class="artifact">
+                <div>
+                    <h3>Apple WWDC scholarship <span class="where">2018</span></h3>
+                    <p>
+                        One of 350 students worldwide selected for a physics-based game simulating collisions
+                        and gravity, written in Swift. Apple flew me to San Jos&eacute; as a high-school freshman.
+                        <a href="https://gist.github.com/technology08/07155eb7a68c511ce30c481e752548c3">Code</a>
+                    </p>
+                </div>
+                <img src="images/archive/wwdc.jpg" alt="Connor outside the San Jose McEnery Convention Center at WWDC 2018" loading="lazy">
+            </article>
+
+            <article class="artifact">
+                <div>
+                    <h3>Leaning Eagle <span class="where">2017&ndash;2019</span></h3>
+                    <p>
+                        An iOS ordering app for my high school's coffee bar &mdash; Stripe, Apple Pay, CloudKit,
+                        and AWS Lambda &mdash; that ran in production on the App Store through two years of
+                        daily lunch rushes.
+                    </p>
+                </div>
+                <img src="images/archive/leaning-eagle.jpg" alt="Leaning Eagle iOS app screens: menu, espresso order with Apple Pay, and smoothie customization" loading="lazy">
+            </article>
+
+            <article class="artifact">
+                <div>
+                    <h3>FIRST Robotics vision <span class="where">2019</span></h3>
+                    <p>
+                        Real-time object tracking running on an iPhone mounted to a competition robot,
+                        streaming target poses over TCP to the drive controller.
+                        <a href="https://github.com/technology08/RobotVisionTracker-iOS">GitHub</a>
+                    </p>
+                </div>
+                <img src="images/archive/robotics.jpg" alt="iPhone app tracking a vision target with confidence and angle readouts" loading="lazy">
+            </article>
+
+            <p class="earlier">
+                Also from those years: augmented-reality turn-by-turn navigation prototypes, and websites
+                built and delivered for local clients.
+            </p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p class="contact-links">
+                <a href="https://github.com/technology08">GitHub</a>
+                <a href="https://scholar.google.com/citations?user=TQef5nYAAAAJ">Google Scholar</a>
+                <a href="https://linkedin.com/in/cespenshade">LinkedIn</a>
+                <a href="https://orcid.org/0000-0002-8318-2596">ORCID</a>
+            </p>
+        </section>
+    </main>
+
     <footer>
-        <div class="hl"></div>
-        <div class="columns">
-            <div class="footercol">
-                <h6>Links</h6>
-                <ul class="footer-list">
-                    <li class="footer-link"><a href="./index.html">Home</a></li>
-                    <li class="footer-link"><a href="./research.html">Research</a></li>
-                    <li class="footer-link"><a href="./technology.html">Technology</a></li>
-                    <li class="footer-link"><a href="./connect.html">Connect</a></li>
-                </ul>
-            </div>
-            <div class="footercol socials">
-                <h6>Social</h6>
-                <a href="http://linkedin.com/in/cespenshade/" target="_blank"><img class="social linkedin" src="./images/logos/linkedin.png" alt=""></a>
-                <a href="https://twitter.com/cjespenshade_" target="_blank"><img class="social twitter" src="./images/logos/twitter.png" alt=""></a>
-            </div>
-        </div>
-        <p class="copyright"><span class="copyright">&copy;</span> Connor Espenshade 2021. All rights reserved.</p>
+        <p>&copy; 2026 Connor Espenshade &middot; New York, NY</p>
     </footer>
 </body>
 </html>
